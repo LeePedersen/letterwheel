@@ -1,5 +1,8 @@
 {
   "name": "capstone",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "doxygen": "^0.3.2",
+    "swig": "^1.4.2"
+  }
 }

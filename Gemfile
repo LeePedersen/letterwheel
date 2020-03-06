@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # ADDED GEMS
 gem 'faker'
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
+# gem 'virgil-sdk'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
