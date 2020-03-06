@@ -15,7 +15,9 @@
 <% if @users %>
   <% @users.each do |user| %>
     <% if user.id != @user.id %>
-      <p><span class='dot'><span><%= user.username %> <%= link_to 'Message me!', conversations_path(user1_id: current_user.id, user2_id: user.id), method: 'post'%></p>
+      <div class='contact'>
+        <p><span class='dot'><%= user.username[0] %></span><%= user.username %> <%= link_to 'Message me!', conversations_path(user1_id: current_user.id, user2_id: user.id), method: 'post'%></p>
+      </div>
     <% end %>
   <% end %>
 <% end %>

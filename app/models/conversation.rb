@@ -7,4 +7,5 @@ class Conversation < ActiveRecord::Base
   scope :between, -> (user1_id, user2_id) do
     where("(conversations.user1_id = ? AND conversations.user2_id = ?) OR (conversations.user1_id = ? AND conversations.user2_id = ?)", user1_id, user2_id, user2_id, user1_id)
   end
+
 end
