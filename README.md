@@ -33,3 +33,4 @@ _Messaging site/app? with ruby on rails, using end-to-end encryption_
   * tool to test rails security: https://brakemanscanner.org/
   * more encryption with rails: https://pawelurbanek.com/rails-secure-encrypt-decrypt
   * tool to validate strong password: https://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html
+  * more resources for end-to-end with ruby: https://github.com/topics/end-to-end-encryption?l=ruby
