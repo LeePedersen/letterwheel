@@ -36,6 +36,10 @@
   padding-left: 20px;
 }
 
-.messages {
+.messages, .users {
   margin-left: 260px;
+}
+
+.navbar {
+  float: right;
 }
