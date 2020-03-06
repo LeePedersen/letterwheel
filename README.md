@@ -36,3 +36,7 @@ _Messaging site/app? with ruby on rails, using end-to-end encryption_
   * more resources for end-to-end with ruby: https://github.com/topics/end-to-end-encryption?l=ruby
   * https://developer.virgilsecurity.com/docs/e3kit/get-started/quickstart/
   * https://github.com/VirgilSecurity/demo-backend-nodejs
+
+### NOTES
+  * trying to get example chat app up and running so I can see how it works. Having config issues with cmake gem
+  * starting to think I may need to do this just between two people to start off - will figure out how that'll work a little later
