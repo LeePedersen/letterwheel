@@ -35,3 +35,4 @@ _Messaging site/app? with ruby on rails, using end-to-end encryption_
   * tool to validate strong password: https://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html
   * more resources for end-to-end with ruby: https://github.com/topics/end-to-end-encryption?l=ruby
   * https://developer.virgilsecurity.com/docs/e3kit/get-started/quickstart/
+  * https://github.com/VirgilSecurity/demo-backend-nodejs
