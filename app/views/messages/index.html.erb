@@ -1,0 +1,35 @@
+<% if @over_ten %>
+  <%= link_to 'Show Previous', '?m=all' %>
+<% end %>
+
+<div>
+
+  <% if current_user.id == @conversation.user1_id %>
+    <p>Messages to <%= User.find(@conversation.user2_id).username %></p>
+  <% else %>
+    <p>Messages to <%= User.find(@conversation.user1_id).username %></p>
+  <% end %>
+
+  <% if @messages %>
+    <% @messages.each do |message| %>
+      <% if message.body %>
+        <% user = User.find(message.user_id) %>
+        <% if user.username == current_user.username %>
+          <% class_name = "me d-flex justify-content-end" %>
+        <% else %>
+          <% class_name = "you d-flex justify-content-start" %>
+        <% end %>
+        <div class="<%= class_name %>">
+        <p><%= message.body %></p>
+      </div>
+      <% end %>
+    <% end %>
+  <% end %>
+
+  <%= form_for [@conversation, @message] do |f| %>
+    <p><%= f.text_area :body %></p>
+    <p><%= f.text_field :user_id, value: current_user.id, type: "hidden" %></p>
+    <p><%= f.submit "Send" %></p>
+  <% end %>
+
+</div>

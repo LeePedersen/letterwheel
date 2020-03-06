@@ -1,0 +1,28 @@
+class ConversationsController < ApplicationController
+
+  before_action :authorize
+
+  def index
+    @user = User.find(session[:user_id])
+    @users = User.all
+    @conversations = Conversation.where("user1_id = ? OR user2_id = ?", @user.id, @user.id)
+    # conversations = [{user1_id: 1, user2_id: 2}, {user1_id: 3, user2_id: 4}]
+    render :index
+  end
+
+  def create
+    if Conversation.between(params[:user1_id], params[:user2_id]).present?
+      @conversation = Conversation.between(params[:user1_id],
+        params[:user2_id]).first
+    else
+      @conversation = Conversation.create!(conversation_params)
+    end
+    redirect_to conversation_messages_path(@conversation)
+  end
+
+  private
+  def conversation_params
+    params.permit(:user1_id, :user2_id)
+  end
+
+end

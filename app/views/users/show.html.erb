@@ -1,0 +1,7 @@
+<h1>Your Profile</h1>
+<p>Name: <%= @user.username %></p>
+<p>Email: <%= @user.email %></p>
+
+<p><%= link_to "Delete your profile", user_path(@user),
+                        :data => {:confirm => "Are you sure?",
+                                       :method => "delete"} %></p>

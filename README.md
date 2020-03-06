@@ -1,7 +1,6 @@
 # Messaging thing (name pending inspiration)
 _Messaging site/app? with ruby on rails, using end-to-end encryption_
 
-
 ## PLANNING
 
 ### SECURITY STUFF DONE
@@ -25,6 +24,7 @@ _Messaging site/app? with ruby on rails, using end-to-end encryption_
 
 ### SECURITY TODO
   * end2end stuff
+  * add pepper?
 
 ### LINKS
   * https://secushare.org/end2end#header
