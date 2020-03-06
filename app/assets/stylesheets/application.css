@@ -23,3 +23,19 @@
   font-size: 40px;
   color: white;
 }
+
+.contacts {
+  height: 100%;
+  width: 260px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.messages {
+  margin-left: 260px;
+}

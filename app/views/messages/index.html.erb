@@ -1,8 +1,10 @@
+<%= render 'layouts/contacts' %>
+
 <% if @over_ten %>
   <%= link_to 'Show Previous', '?m=all' %>
 <% end %>
 
-<div>
+<div class='messages'>
 
   <% if current_user.id == @conversation.user1_id %>
     <p>Messages to <%= User.find(@conversation.user2_id).username %></p>

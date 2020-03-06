@@ -6,7 +6,6 @@ class ConversationsController < ApplicationController
     @user = User.find(session[:user_id])
     @users = User.all
     @conversations = Conversation.where("user1_id = ? OR user2_id = ?", @user.id, @user.id)
-    # conversations = [{user1_id: 1, user2_id: 2}, {user1_id: 3, user2_id: 4}]
     render :index
   end
 
