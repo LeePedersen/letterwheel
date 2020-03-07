@@ -17,10 +17,9 @@ _Messaging site/app? with ruby on rails, using end-to-end encryption_
     * check that user is in conversation
 
 ### GENERAL TODO
-  * default page: sign in page
-  * views
   * email verification
-  * add uuid
+  * maybe get actioncable up and running
+  * deploy to heroku
 
 ### SECURITY TODO
   * end2end stuff
@@ -45,3 +44,4 @@ _Messaging site/app? with ruby on rails, using end-to-end encryption_
   * Giving up on config issues on epicodus computer right now. If I can get it deployed it shouldn't be a problem? I think?
   * Got the virgil example chat repo up and running! Shouldn't have been this hard but there were a lot of config issues
   * Troubleshooting the example chat CORS headers. May not spend too much time on this because I have a feeling it might be a version issue and it seems more productive to cross that bridge in my own app when I get to it
+  * Next steps: ActionCable could be really good to have, and then I have to study the virgil security docs more to figure out how to make it work
