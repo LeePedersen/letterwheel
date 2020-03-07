@@ -41,3 +41,4 @@ _Messaging site/app? with ruby on rails, using end-to-end encryption_
   * trying to get example chat app up and running so I can see how it works. Having config issues with cmake gem
   * starting to think I may need to do this just between two people to start off - will figure out how that'll work a little later
   * Config issues were with virgil gem which is kinda what my whole thing is based on. Got them sorted out on my computer but not on epicodus computer
+  * Giving up on config issues on epicodus computer right now. If I can get it deployed it shouldn't be a problem? I think?
