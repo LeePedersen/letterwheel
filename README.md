@@ -43,3 +43,4 @@ _Messaging site/app? with ruby on rails, using end-to-end encryption_
   * Config issues were with virgil gem which is kinda what my whole thing is based on. Got them sorted out on my computer but not on epicodus computer
   * Giving up on config issues on epicodus computer right now. If I can get it deployed it shouldn't be a problem? I think?
   * Got the virgil example chat repo up and running! Shouldn't have been this hard but there were a lot of config issues
+  * Troubleshooting the example chat CORS headers. May not spend too much time on this because I have a feeling it might be a version issue and it seems more productive to cross that bridge in my own app when I get to it
