@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   post '/signin' => 'sessions#create'
   get '/signout' => 'sessions#destroy'
 
+  mount ActionCable.server => '/cable'
+
 end
