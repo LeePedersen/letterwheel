@@ -5,7 +5,7 @@ _Messaging site/app? with ruby on rails, using end-to-end encryption_
 
 ### SECURITY STUFF DONE
   * create controllers, models for conversations, messages
-  * add bcrypt
+  * bcrypt
   * validations:
     * password and password confirmation
     * email format
