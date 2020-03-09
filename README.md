@@ -37,7 +37,7 @@ _Messaging site/app? with ruby on rails, using end-to-end encryption_
   * https://github.com/VirgilSecurity/demo-backend-nodejs
   * resource for CORS issues: https://medium.com/@Nicholson85/handling-cors-issues-in-your-rails-api-120dfbcb8a24
 
-### NOTES
+### NOTES 3/6
   * trying to get example chat app up and running so I can see how it works. Having config issues with cmake gem
   * starting to think I may need to do this just as a chat between two people to start off - will figure out how that'll work a little later
   * Config issues were with virgil gem which is kinda what my whole thing is based on. Got them sorted out on my computer but not on epicodus computer
@@ -45,3 +45,7 @@ _Messaging site/app? with ruby on rails, using end-to-end encryption_
   * Got the virgil example chat repo up and running! Shouldn't have been this hard but there were a lot of config issues
   * Troubleshooting the example chat CORS headers. May not spend too much time on this because I have a feeling it might be a version issue and it seems more productive to cross that bridge in my own app when I get to it
   * Next steps: ActionCable could be really good to have, and then I have to study the virgil security docs more to figure out how to make it work
+
+### NOTES 3/9
+  * might need to specify url in cable.yml
+  * turbolinks?? Do I have it? Do I need it?

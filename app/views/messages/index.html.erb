@@ -4,7 +4,7 @@
   <%= link_to 'Show Previous', '?m=all' %>
 <% end %>
 
-<div class='messages' data-conversation-id='<%= @conversation.id %>'>
+<div id='messages' data-conversation-id='<%= @conversation.id %>'>
 
   <% if current_user.id == @conversation.user1_id %>
     <p>Messages to <%= User.find(@conversation.user2_id).username %></p>

@@ -39,6 +39,7 @@ gem 'bcrypt', '~> 3.1', '>= 3.1.12'
 # gem 'virgil-sdk'
 gem 'rack-cors'
 gem 'redis', '~> 3.2'
+gem 'jquery-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
