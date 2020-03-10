@@ -14,10 +14,12 @@
  *= require_self
  */
 
+
+/* GENERAL */
+
 body {
   font-family: 'Source Sans Pro', sans-serif;
-
- }
+}
 
 a {
   text-decoration: none;
@@ -30,19 +32,25 @@ p {
 
 .navbar {
   float: right;
- }
-
-.messages {
-  margin-left: 300px;
-  width: 70%;
-  position: fixed;
-  bottom: 10px;
 }
 
 #message-top {
   text-align: center;
   margin-left: 300px;
 }
+
+#message_body {
+  width: 100%;
+  border-radius: 25px;
+  height: 30px;
+  outline-width: 0;
+  padding-left: 10px;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+
+/* SIDEBAR */
 
 .contacts, .users {
   height: 100%;
@@ -76,14 +84,14 @@ p {
   background-color: #9dcfbc;
 }
 
-#message_body {
-  width: 100%;
-  border-radius: 25px;
-  height: 30px;
-  outline-width: 0;
-  padding-left: 10px;
-  margin-top: 20px;
-  font-size: 15px;
+
+/* MESSAGES */
+
+.messages {
+  margin-left: 300px;
+  width: 70%;
+  position: fixed;
+  bottom: 10px;
 }
 
 .me, .you {
@@ -98,10 +106,37 @@ p {
 }
 
 .me {
-  float: right;
+  margin: auto 10px 10px auto;
 }
 
 .you {
   background-color: #9dcfbc;
   text-align: left;
+}
+
+.timestamp {
+  font-size: 13px;
+}
+
+.read {
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  border: solid 1px;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.you .read {
+  float: left;
+  margin-right: 3px;
+}
+
+.me .read {
+  float: right;
+  margin-left: 3px;
+}
+
+.is-read {
+  background-color: #457563;
 }

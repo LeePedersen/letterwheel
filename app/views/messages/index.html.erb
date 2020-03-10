@@ -32,9 +32,16 @@
         <% else %>
           <% identify_class = 'you' %>
         <% end %>
+        <% if message.read %>
+          <p>READ</p>
+          <% read_class = 'is-read' %>
+        <% else %>
+          <% read_class = 'unread' %>
+        <% end %>
         <div class="<%= identify_class %>">
-        <p><%= message.body %></p>
-      </div>
+          <p><%= message.body %></p>
+          <p class='timestamp'><%= message.message_time %><span class='read <%= read_class %>'></span></p>
+        </div>
       <% end %>
     <% end %>
   <% end %>
