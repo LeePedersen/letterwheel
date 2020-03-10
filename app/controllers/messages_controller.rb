@@ -30,7 +30,11 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = @conversation.messages.new(message_params)
+    id = message_params['user_id']
+    body = message_params['body']
+    key = 5
+    encoded_body = encode_message(body, key)
+    @message = @conversation.messages.new({"body"=>encoded_body, "user_id"=>id})
     if @message.save
       redirect_to conversation_messages_path(@conversation)
     end

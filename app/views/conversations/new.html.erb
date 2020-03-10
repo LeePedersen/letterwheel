@@ -1,0 +1,4 @@
+<%= form_for @conversation do |f| %>
+  <p><%= f.number_field_tag :code_key, min: 1, max: 26 %></p>
+  <p><%= f.submit "Choose previously-agreed-on key" %></p>
+<% end %>

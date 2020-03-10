@@ -20,6 +20,7 @@ class ConversationsController < ApplicationController
   end
 
   private
+
   def conversation_params
     params.permit(:user1_id, :user2_id)
   end
