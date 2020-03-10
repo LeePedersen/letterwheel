@@ -35,7 +35,6 @@ p {
 .messages {
   margin-left: 300px;
   width: 70%;
-  /* height: 100%; */
   position: fixed;
   bottom: 10px;
 }
@@ -64,7 +63,7 @@ p {
 .dot {
   height: 50px;
   width: 50px;
-  background-color: #5603fc;
+  background-color: #457563;
   border-radius: 50%;
   display: inline-block;
   text-align: center;
@@ -85,4 +84,24 @@ p {
   padding-left: 10px;
   margin-top: 20px;
   font-size: 15px;
+}
+
+.me, .you {
+  margin: 10px;
+  padding: 12px;
+  border-radius: 15px;
+  background-color: #d0dbd7;
+  font-size: 16px;
+  text-align: right;
+  width: -webkit-max-content;
+  width: max-content;
+}
+
+.me {
+  float: right;
+}
+
+.you {
+  background-color: #9dcfbc;
+  text-align: left;
 }

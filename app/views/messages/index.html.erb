@@ -40,7 +40,7 @@
   <% end %>
 
   <%= form_for [@conversation, @message] do |f| %>
-    <p><%= f.text_field :body, placeholder: 'Send message' %><%= f.submit "", type: 'hidden', :id => 'send' %></p>
+    <p><%= f.text_field :body, placeholder: 'Send message' %><%= f.submit "", type: 'hidden' %></p>
     <p><%= f.text_field :user_id, value: current_user.id, type: "hidden" %></p>
     <p></p>
   <% end %>
