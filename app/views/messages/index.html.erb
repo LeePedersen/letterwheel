@@ -1,27 +1,38 @@
-<%= render 'layouts/contacts' %>
 
-<% if @over_ten %>
-  <%= link_to 'Show Previous', '?m=all' %>
+<% if @conversations %>
+  <div class='contacts'>
+    <% @conversations.each do |conversation| %>
+      <% if conversation.user1_id == @user.id %>
+        <% user2 = User.find(conversation.user2_id) %>
+      <% elsif conversation.user2_id == @user.id %>
+        <% user2 = User.find(conversation.user1_id) %>
+      <% end %>
+      <% if user2.username == @other_user.username %>
+        <% select_class = 'selected' %>
+      <% else %>
+        <% select_class = 'normal' %>
+      <% end %>
+      <div class='user <%= select_class %>'>
+        <p><span class='dot'><%= user2.username[0] %></span><%= link_to user2.username, conversation_messages_path(conversation) %></p>
+      </div>
+    <% end %>
+  </div>
 <% end %>
 
-<div class='messages'>
+<p id='message-top'>Messages to <%= @other_user.username %></p>
 
-  <% if current_user.id == @conversation.user1_id %>
-    <p>Messages to <%= User.find(@conversation.user2_id).username %></p>
-  <% else %>
-    <p>Messages to <%= User.find(@conversation.user1_id).username %></p>
-  <% end %>
+<div class='messages'>
 
   <% if @messages %>
     <% @messages.each do |message| %>
       <% if message.body %>
         <% user = User.find(message.user_id) %>
         <% if user.username == current_user.username %>
-          <% class_name = "me d-flex justify-content-end" %>
+          <% identify_class = 'me' %>
         <% else %>
-          <% class_name = "you d-flex justify-content-start" %>
+          <% identify_class = 'you' %>
         <% end %>
-        <div class="<%= class_name %>">
+        <div class="<%= identify_class %>">
         <p><%= message.body %></p>
       </div>
       <% end %>
@@ -29,9 +40,9 @@
   <% end %>
 
   <%= form_for [@conversation, @message] do |f| %>
-    <p><%= f.text_area :body %></p>
+    <p><%= f.text_field :body, placeholder: 'Send message' %><%= f.submit "", type: 'hidden', :id => 'send' %></p>
     <p><%= f.text_field :user_id, value: current_user.id, type: "hidden" %></p>
-    <p><%= f.submit "Send" %></p>
+    <p></p>
   <% end %>
 
 </div>

@@ -9,14 +9,11 @@ class MessagesController < ApplicationController
 
   def index
     @messages = @conversation.messages
-    # if @messages.length > 10
-    #   @over_ten = true
-    #   @messages = @messages[-10..-1]
-    # end
-    # if params[:m]
-    #   @over_ten = false
-    #   @messages = @conversation.messages
-    # end
+    if current_user.id == @conversation.user1_id
+      @other_user = User.find(@conversation.user2_id)
+    else
+      @other_user = User.find(@conversation.user1_id)
+    end
     if @messages.last
       if @messages.last.user_id != current_user.id
         @messages.last.read = true;
