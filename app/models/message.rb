@@ -8,4 +8,9 @@ class Message < ActiveRecord::Base
     created_at.strftime("%l:%M %p")
   end
 
+  def encrypt_code_key
+    self.code_key_salt = BCrypt::Engine.generate_salt
+    self.code_key_hash = BCrypt::Engine.hash_secret(code_key, code_key_salt)
+  end
+
 end
