@@ -13,6 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+ }
+ 
+.navbar {
+  float: right;
+ }
+
 .dot {
   height: 50px;
   width: 50px;
@@ -22,9 +31,10 @@
   text-align: center;
   font-size: 40px;
   color: white;
+  margin-right: 10px;
 }
 
-.contacts {
+.contacts, .users {
   height: 100%;
   width: 260px;
   position: fixed;
@@ -34,12 +44,15 @@
   overflow-x: hidden;
   padding-top: 20px;
   padding-left: 20px;
+  background-color: #c1ded3;
 }
 
-.messages, .users {
-  margin-left: 260px;
+.messages {
+  margin-left: 400px;
 }
 
-.navbar {
-  float: right;
+
+
+.contact {
+  font-size: 20px;
 }

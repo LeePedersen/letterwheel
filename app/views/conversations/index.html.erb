@@ -1,14 +1,27 @@
-<%= render 'layouts/contacts' %>
-
 <div class='users'>
 
-  <h2>Users</h2>
+  <h2>Your Conversations</h2>
+
+  <% if @conversations %>
+    <% @conversations.each do |conversation| %>
+      <% if conversation.user1_id == @user.id %>
+        <% user2 = User.find(conversation.user2_id) %>
+      <% elsif conversation.user2_id == @user.id %>
+        <% user2 = User.find(conversation.user1_id) %>
+      <% end %>
+      <div class='user'>
+        <p><span class='dot'><%= user2.username[0] %></span><%= link_to user2.username, conversation_messages_path(conversation) %></p>
+      </div>
+    <% end %>
+  <% end %>
+
+  <h2>Other Users</h2>
 
   <% if @users %>
     <% @users.each do |user| %>
       <% if user.id != @user.id %>
         <div class='contact'>
-          <p><span class='dot'><%= user.username[0] %></span><%= user.username %> <%= link_to 'Message me!', conversations_path(user1_id: current_user.id, user2_id: user.id), method: 'post'%></p>
+          <p><span class='dot'><%= user.username[0] %></span><%= link_to user.username, conversations_path(user1_id: current_user.id, user2_id: user.id), method: 'post'%></p>
         </div>
       <% end %>
     <% end %>

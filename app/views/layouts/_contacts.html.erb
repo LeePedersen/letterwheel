@@ -6,7 +6,9 @@
       <% elsif conversation.user2_id == @user.id %>
         <% user2 = User.find(conversation.user1_id) %>
       <% end %>
-      <p><span class='dot'><%= user2.username[0] %></span><%= link_to user2.username, conversation_messages_path(conversation) %></p>
+      <div class='user'>
+        <p><span class='dot'><%= user2.username[0] %></span><%= link_to user2.username, conversation_messages_path(conversation) %></p>
+      </div>
     <% end %>
   </div>
 <% end %>
