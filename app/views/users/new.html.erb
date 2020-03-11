@@ -3,18 +3,20 @@
 <div class='sign-page'>
 
   <div class='sign-form'>
-    <h1> Sign up</h1>
+    <h1> Sign up for Letterwheel</h1>
     <%= form_for @user do |f| %>
-      <p><%= f.label "Email" %>
-      <%= f.text_field :email %></p>
-      <p><%= f.label "Username" %>
-      <%= f.text_field :username %></p>
-      <p><%= f.label "Password" %>
-      <%= f.password_field :password %></p>
-      <p><%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation %></p>
-      <br>
-      <%= f.submit "Sign Up" %>
+      <p><%= f.label "Email" %> address</p>
+      <p><%= f.text_field :email, class: 'input-field' %></p>
+      <p><%= f.label "Username" %></p>
+      <p><%= f.text_field :username, class: 'input-field' %></p>
+      <p><%= f.label "Password" %></p>
+      <p><%= f.password_field :password, class: 'input-field' %></p>
+      <p id='password-info'>Make sure your password is more than 16 characters long</p>
+      <p><%= f.label :password_confirmation %></p>
+      <p><%= f.password_field :password_confirmation, class: 'input-field' %></p>
+      <p><%= f.submit "Sign Up", class: 'input-field', id: 'sign-button' %></p>
+      <hr>
+      <p>Or <span id='signup-link'><%= link_to "sign in", '/signin' %></span></p>
     <% end %>
   </div>
 
