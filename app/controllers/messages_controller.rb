@@ -9,6 +9,12 @@ class MessagesController < ApplicationController
 
   def index
     @messages = @conversation.messages
+    @coded_messages = @conversation.messages
+    key = 5
+    @messages.each do |message|
+      message.body = decode_message(message.body, key)
+    end
+
     if current_user.id == @conversation.user1_id
       @other_user = User.find(@conversation.user2_id)
     else
