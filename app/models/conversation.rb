@@ -8,9 +8,6 @@ class Conversation < ActiveRecord::Base
     where("(conversations.user1_id = ? AND conversations.user2_id = ?) OR (conversations.user1_id = ? AND conversations.user2_id = ?)", user1_id, user2_id, user2_id, user1_id)
   end
 
-  # def self.code_key
-  #   @code_key =
-
   # def encrypt_code_key
   #   self.code_key_salt = BCrypt::Engine.generate_salt
   #   self.code_key_hash = BCrypt::Engine.hash_secret(code_key, code_key_salt)

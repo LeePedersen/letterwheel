@@ -45,3 +45,16 @@ _Messaging site/app? with ruby on rails, using end-to-end encryption_
   * Got the virgil example chat repo up and running! Shouldn't have been this hard but there were a lot of config issues
   * Troubleshooting the example chat CORS headers. May not spend too much time on this because I have a feeling it might be a version issue and it seems more productive to cross that bridge in my own app when I get to it
   * Next steps: ActionCable could be really good to have, and then I have to study the virgil security docs more to figure out how to make it work
+
+
+
+
+<%= link_to user.username, new_conversation_path(user1_id: current_user.id, user2_id: user.id) %>
+
+<%= form_for @conversation do |f| %>
+  <p><%= f.text_field :code_key %></p>
+  <p><%= f.submit "Choose previously-agreed-on key" %></p>
+<% end %>
+
+
+<%= link_to user.username, new_conversations_path(user1_id: current_user.id, user2_id: user.id), method: 'post'%>

@@ -1,4 +1,8 @@
-<%= form_for @conversation do |f| %>
-  <p><%= f.number_field_tag :code_key, min: 1, max: 26 %></p>
-  <p><%= f.submit "Choose previously-agreed-on key" %></p>
-<% end %>
+<form action='/conversations' method='post'>
+  <input type="hidden" name="authenticity_token" value="<%= @authenticity_token %>">
+  <input type="hidden" name="user1_id" value="<%= params[:user1_id] %>">
+  <input type="hidden" name="user2_id" value="<%= params[:user2_id] %>">
+  <label for='code_key'></label>
+  <input type='text' name='code_key' id='code_key'>
+  <input type='submit' name='commit' value='set key' data-disable-with='set key'>
+</form>

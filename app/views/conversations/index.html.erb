@@ -20,7 +20,7 @@
     <% @users.each do |user| %>
       <% if user.id != @user.id %>
         <div class='contact'>
-          <p><span class='dot'><%= user.username[0] %></span><%= link_to user.username, conversations_path(user1_id: current_user.id, user2_id: user.id), method: 'post'%></p>
+          <p><span class='dot'><%= user.username[0] %></span><%= link_to user.username, new_conversation_path(user1_id: current_user.id, user2_id: user.id) %></p>
         </div>
       <% end %>
     <% end %>
