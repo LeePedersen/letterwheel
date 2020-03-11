@@ -1,14 +1,21 @@
 <%= render "layouts/errors", :object => @user %>
 
-<h1> Sign up</h1>
-<%= form_for @user do |f| %>
-  <%= f.label "Email" %>
-  <%= f.text_field :email %>
-  <%= f.label "Username" %>
-  <%= f.text_field :username %>
-  <%= f.label "Password" %>
-  <%= f.password_field :password %>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit "Sign Up" %>
-<% end %>
+<div class='sign-page'>
+
+  <div class='sign-form'>
+    <h1> Sign up</h1>
+    <%= form_for @user do |f| %>
+      <p><%= f.label "Email" %>
+      <%= f.text_field :email %></p>
+      <p><%= f.label "Username" %>
+      <%= f.text_field :username %></p>
+      <p><%= f.label "Password" %>
+      <%= f.password_field :password %></p>
+      <p><%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation %></p>
+      <br>
+      <%= f.submit "Sign Up" %>
+    <% end %>
+  </div>
+
+</div>

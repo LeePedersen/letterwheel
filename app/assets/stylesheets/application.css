@@ -19,6 +19,7 @@
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
+
 }
 
 a {
@@ -31,7 +32,9 @@ p {
 }
 
 .navbar {
-  float: right;
+  text-align: right;
+  width: 100%;
+  z-index: 5;
 }
 
 #message-top {
@@ -61,6 +64,7 @@ p {
   left: 0;
   overflow-x: hidden;
   background-color: #c1ded3;
+  /* display: block; */
 }
 
 .contact, .user {
@@ -92,6 +96,7 @@ p {
   width: 70%;
   position: fixed;
   bottom: 10px;
+  background-color: white;
 }
 
 .me, .you {
@@ -139,4 +144,32 @@ p {
 
 .is-read {
   background-color: #457563;
+}
+
+/* SIGNUP/IN */
+
+.header {
+  text-align: center;
+}
+
+.sign-page {
+  position: absolute;
+  z-index: 1;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-color: #457563;
+  background-image: url('letter_wheel.png');
+  background-repeat: no-repeat;
+  background-size: 170%;
+}
+
+.sign-form {
+  margin: auto;
+  width: 30%;
+  /* border: solid 4px #134734; */
+  /* border-radius: 15px; */
+  padding: 20px;
+  text-align: center;
+  background-color: white;
+  box-shadow: 8px 13px rgba(19, 71, 52, .7);
+  margin-top: 100px;
 }
