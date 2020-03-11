@@ -31,6 +31,10 @@ p {
   margin: 0;
 }
 
+#alert, #notice, .navbar {
+ position: relative;
+}
+
 .navbar {
   text-align: right;
   width: 100%;
@@ -50,6 +54,27 @@ p {
   padding-left: 10px;
   margin-top: 20px;
   font-size: 15px;
+}
+
+
+/* CONVERSATIONS */
+
+.convo-header {
+  padding: 10px;
+  background-color: #9dcfbc;
+  margin: 0px;
+  font-size: 20px;
+}
+
+.blank {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-color: #457563;
+  background-image: url('letter_wheel.png');
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position: center;
+  margin-left: 260px;
 }
 
 
@@ -159,7 +184,8 @@ p {
   background-color: #457563;
   background-image: url('letter_wheel.png');
   background-repeat: no-repeat;
-  background-size: 170%;
+  background-size: 70%;
+  background-position: center;
 }
 
 .sign-form {
@@ -170,7 +196,7 @@ p {
   padding: 20px;
   text-align: center;
   background-color: white;
-  box-shadow: 8px 13px rgba(19, 71, 52, .7);
+  /* box-shadow: 4px 8px rgba(19, 71, 52, .7); */
   margin-top: 100px;
 }
 
