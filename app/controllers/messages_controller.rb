@@ -23,7 +23,9 @@ class MessagesController < ApplicationController
     end
     if @coded_messages.last
       if @coded_messages.last.user_id != current_user.id
-        @coded_messages.last.update({read: true})
+        @coded_messages.each do |message|
+          message.update({read: true})
+        end
       end
     end
     @message = @conversation.messages.new
