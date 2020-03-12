@@ -70,7 +70,7 @@ p {
   position: absolute;
   top: 0; right: 0; bottom: 0; left: 0;
   background-color: #457563;
-  background-image: url('letter_wheel.png');
+  background-image: url('https://github.com/LeePedersen/letterwheel/blob/master/app/assets/images/letter_wheel.png');
   background-repeat: no-repeat;
   background-size: 50%;
   background-position: center;
@@ -181,7 +181,7 @@ p {
   z-index: 1;
   top: 0; right: 0; bottom: 0; left: 0;
   background-color: #457563;
-  background-image: url('letter_wheel.png');
+  background-image: url('https://github.com/LeePedersen/letterwheel/blob/master/app/assets/images/letter_wheel.png');
   background-repeat: no-repeat;
   background-size: 70%;
   background-position: center;
