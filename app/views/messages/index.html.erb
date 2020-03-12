@@ -23,27 +23,31 @@
 
 <div class='messages'>
 
-  <% if @coded_messages %>
-    <% @coded_messages.each_with_index do |message, index| %>
-      <% if message.body %>
-        <% user = User.find(message.user_id) %>
-        <% if user.username == current_user.username %>
-          <% identify_class = 'me' %>
-        <% else %>
-          <% identify_class = 'you' %>
+  <div class='messages-scroll'>
+
+    <% if @coded_messages %>
+      <% @coded_messages.each_with_index do |message, index| %>
+        <% if message.body %>
+          <% user = User.find(message.user_id) %>
+          <% if user.username == current_user.username %>
+            <% identify_class = 'me' %>
+          <% else %>
+            <% identify_class = 'you' %>
+          <% end %>
+          <% if message.read %>
+            <% read_class = 'is-read' %>
+          <% else %>
+            <% read_class = 'unread' %>
+          <% end %>
+          <div class="<%= identify_class %>">
+            <p><%= @messages[index] %></p>
+            <p class='timestamp'><%= message.message_time %><span class='read <%= read_class %>'></span></p>
+          </div>
         <% end %>
-        <% if message.read %>
-          <% read_class = 'is-read' %>
-        <% else %>
-          <% read_class = 'unread' %>
-        <% end %>
-        <div class="<%= identify_class %>">
-          <p><%= @messages[index] %></p>
-          <p class='timestamp'><%= message.message_time %><span class='read <%= read_class %>'></span></p>
-        </div>
       <% end %>
     <% end %>
-  <% end %>
+
+  </div>
 
   <%= form_for [@conversation, @message] do |f| %>
     <p><%= f.text_field :body, placeholder: 'Send message' %><%= f.submit "", type: 'hidden' %></p>

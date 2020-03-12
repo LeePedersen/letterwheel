@@ -123,6 +123,13 @@ p {
   background-color: white;
 }
 
+.messages-scroll {
+  height: 100vh;
+  margin-bottom: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 .me, .you {
   margin: 10px;
   padding: 12px;

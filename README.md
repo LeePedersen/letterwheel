@@ -19,7 +19,8 @@ _Encoded (not encrypted!) messaging app with ruby on rails. Works on the same pr
 * `PostgreSQL`
 
 ## Known Bugs
-Not technically a bug but the code key is always in the url. I will quite possibly fix this
+* not technically a bug but the code key is always in the url. I will quite possibly fix this
+* messages are not yet scrollable
 
 ## Support and Contact Details
 _For issues contact [Lee](https://github.com/LeePedersen)_
