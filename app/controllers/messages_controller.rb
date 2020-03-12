@@ -11,10 +11,10 @@ class MessagesController < ApplicationController
   end
 
   def index
-    @messages = @conversation.messages
+    @messages = []
     @coded_messages = @conversation.messages
-    @messages.each do |message|
-      message.body = decode_message(message.body, @code_key.to_i)
+    @coded_messages.each do |message|
+      @messages.push(decode_message(message.body, @code_key.to_i))
     end
     # binding.pry
     if current_user.id == @conversation.user1_id
@@ -22,9 +22,9 @@ class MessagesController < ApplicationController
     else
       @other_user = User.find(@conversation.user1_id)
     end
-    if @messages.last
-      if @messages.last.user_id != current_user.id
-        @messages.last.update({read: true})
+    if @coded_messages.last
+      if @coded_messages.last.user_id != current_user.id
+        @coded_messages.last.update({read: true})
       end
     end
     @message = @conversation.messages.new
