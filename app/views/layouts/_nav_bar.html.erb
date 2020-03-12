@@ -1,6 +1,7 @@
 <div class='navbar'>
   <% if current_user %>
-    <span><%= link_to "Sign out", '/signout' %></span>
+    <span><%= link_to "Sign out", '/signout' %> |</span>
+    <span><%= link_to "Show all users", '/conversations' %></span>
   <% else %>
     <span><%= link_to "Sign up", '/signup' %> |</span>
     <span><%= link_to "Sign in", '/' %></span>

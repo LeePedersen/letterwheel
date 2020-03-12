@@ -16,7 +16,7 @@ class MessagesController < ApplicationController
     @messages.each do |message|
       message.body = decode_message(message.body, @code_key.to_i)
     end
-
+    # binding.pry
     if current_user.id == @conversation.user1_id
       @other_user = User.find(@conversation.user2_id)
     else
@@ -34,7 +34,6 @@ class MessagesController < ApplicationController
     id = message_params['user_id']
     body = message_params['body']
     encoded_body = encode_message(body, @code_key.to_i)
-    binding.pry
     @message = @conversation.messages.new({"body"=>encoded_body, "user_id"=>id})
     if @message.save
       redirect_to conversation_messages_path(@conversation, {:code_key => @code_key})
