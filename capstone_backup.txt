@@ -1,0 +1,325 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 12.1
+-- Dumped by pg_dump version 12.1
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: ar_internal_metadata; Type: TABLE; Schema: public; Owner: Guest
+--
+
+CREATE TABLE public.ar_internal_metadata (
+    key character varying NOT NULL,
+    value character varying,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.ar_internal_metadata OWNER TO "Guest";
+
+--
+-- Name: conversations; Type: TABLE; Schema: public; Owner: Guest
+--
+
+CREATE TABLE public.conversations (
+    id bigint NOT NULL,
+    user1_id integer,
+    user2_id integer,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.conversations OWNER TO "Guest";
+
+--
+-- Name: conversations_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
+--
+
+CREATE SEQUENCE public.conversations_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.conversations_id_seq OWNER TO "Guest";
+
+--
+-- Name: conversations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
+--
+
+ALTER SEQUENCE public.conversations_id_seq OWNED BY public.conversations.id;
+
+
+--
+-- Name: messages; Type: TABLE; Schema: public; Owner: Guest
+--
+
+CREATE TABLE public.messages (
+    id bigint NOT NULL,
+    body text,
+    conversation_id bigint,
+    user_id bigint,
+    read boolean DEFAULT false,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+
+ALTER TABLE public.messages OWNER TO "Guest";
+
+--
+-- Name: messages_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
+--
+
+CREATE SEQUENCE public.messages_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.messages_id_seq OWNER TO "Guest";
+
+--
+-- Name: messages_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
+--
+
+ALTER SEQUENCE public.messages_id_seq OWNED BY public.messages.id;
+
+
+--
+-- Name: schema_migrations; Type: TABLE; Schema: public; Owner: Guest
+--
+
+CREATE TABLE public.schema_migrations (
+    version character varying NOT NULL
+);
+
+
+ALTER TABLE public.schema_migrations OWNER TO "Guest";
+
+--
+-- Name: users; Type: TABLE; Schema: public; Owner: Guest
+--
+
+CREATE TABLE public.users (
+    id bigint NOT NULL,
+    email character varying,
+    username character varying,
+    password_hash character varying,
+    password_salt character varying
+);
+
+
+ALTER TABLE public.users OWNER TO "Guest";
+
+--
+-- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: Guest
+--
+
+CREATE SEQUENCE public.users_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.users_id_seq OWNER TO "Guest";
+
+--
+-- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: Guest
+--
+
+ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
+
+
+--
+-- Name: conversations id; Type: DEFAULT; Schema: public; Owner: Guest
+--
+
+ALTER TABLE ONLY public.conversations ALTER COLUMN id SET DEFAULT nextval('public.conversations_id_seq'::regclass);
+
+
+--
+-- Name: messages id; Type: DEFAULT; Schema: public; Owner: Guest
+--
+
+ALTER TABLE ONLY public.messages ALTER COLUMN id SET DEFAULT nextval('public.messages_id_seq'::regclass);
+
+
+--
+-- Name: users id; Type: DEFAULT; Schema: public; Owner: Guest
+--
+
+ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_id_seq'::regclass);
+
+
+--
+-- Data for Name: ar_internal_metadata; Type: TABLE DATA; Schema: public; Owner: Guest
+--
+
+COPY public.ar_internal_metadata (key, value, created_at, updated_at) FROM stdin;
+environment	development	2020-03-12 18:07:35.197013	2020-03-12 18:07:35.197013
+\.
+
+
+--
+-- Data for Name: conversations; Type: TABLE DATA; Schema: public; Owner: Guest
+--
+
+COPY public.conversations (id, user1_id, user2_id, created_at, updated_at) FROM stdin;
+1	1	3	2020-03-12 18:51:34.908792	2020-03-12 18:51:34.908792
+2	3	2	2020-03-12 18:57:57.170003	2020-03-12 18:57:57.170003
+3	1	5	2020-03-12 20:22:56.03649	2020-03-12 20:22:56.03649
+4	5	2	2020-03-12 20:29:21.049919	2020-03-12 20:29:21.049919
+5	1	6	2020-03-12 21:27:30.609033	2020-03-12 21:27:30.609033
+\.
+
+
+--
+-- Data for Name: messages; Type: TABLE DATA; Schema: public; Owner: Guest
+--
+
+COPY public.messages (id, body, conversation_id, user_id, read, created_at, updated_at) FROM stdin;
+1	olssv	1	1	t	2020-03-12 18:51:41.979542	2020-03-12 18:52:08.4024
+2	mn	1	3	t	2020-03-12 18:53:01.194417	2020-03-12 18:53:09.239453
+3	zkhmrqoshrkmzorsqhmzorsqkmzhorsho	1	3	t	2020-03-12 18:57:02.274281	2020-03-12 18:57:11.918312
+4	qr	3	1	t	2020-03-12 20:23:00.341255	2020-03-12 20:23:15.374782
+5	xlmw mw e wirxirgi	3	1	t	2020-03-12 20:24:42.234392	2020-03-12 20:24:57.143951
+6	qnuuxxxxx	5	1	f	2020-03-12 21:27:43.095573	2020-03-12 21:27:43.095573
+7	I told you not to do that	1	1	f	2020-03-12 21:47:13.454197	2020-03-12 21:47:13.454197
+8	I told you not to do that	1	1	f	2020-03-12 21:47:28.37742	2020-03-12 21:47:28.37742
+\.
+
+
+--
+-- Data for Name: schema_migrations; Type: TABLE DATA; Schema: public; Owner: Guest
+--
+
+COPY public.schema_migrations (version) FROM stdin;
+20200228195912
+20200228201838
+20200228202145
+\.
+
+
+--
+-- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: Guest
+--
+
+COPY public.users (id, email, username, password_hash, password_salt) FROM stdin;
+1	kaylee@firefly.com	Kaylee Frye	$2a$12$iZN9YMrBVfZNwinESgs5oO/nGfZqIpbyO62b6K6m.Bjnh7VL6NMeu	$2a$12$iZN9YMrBVfZNwinESgs5oO
+2	mal@firefly.com	Malcolm Reynolds	$2a$12$b4Rx9pVo4zX/T3b7WRXNquBBSqKA4i2TL2jaRDFb.KqEklGCZddOG	$2a$12$b4Rx9pVo4zX/T3b7WRXNqu
+3	zoe@firefly.com	Zoe Washburne	$2a$12$kkzrAkr3m9SUmHU/j58S3OakHs8hEAT/YVE7jK2SA/sE684nT01qS	$2a$12$kkzrAkr3m9SUmHU/j58S3O
+4	river@firefly.com	River Tam	$2a$12$de7.h/syZB3.KDVTroyopuPh8yvjdp887FoUrWo5ufNJj0UYWNz6.	$2a$12$de7.h/syZB3.KDVTroyopu
+5	simon@firefly.com	Simon Tam	$2a$12$TZfjH36ePzIuCZiVa.PmV.2H7qw9IdqcHgyu//.fAeXOWGni/5awG	$2a$12$TZfjH36ePzIuCZiVa.PmV.
+6	wash@firefly.com	Hoban Washburne	$2a$12$2ZwaQF1kC9DEOP.n0NmiS.OUdkSJha/8OaAGncMjRU4AM5mFrAY6S	$2a$12$2ZwaQF1kC9DEOP.n0NmiS.
+7	jayne@firefly.com	Jayne Cobb	$2a$12$j.PX//6dScY2iMhrJfGvxeDN2FY0WWnEqDBKqrZJs4e7CrYZmUIwK	$2a$12$j.PX//6dScY2iMhrJfGvxe
+8	inara@firefly.com	Inara Serra	$2a$12$RizFAIgQEoVs.ED8ssv3F.TPmjeJ/134WKGqzK0NqdckLP0p8jfmG	$2a$12$RizFAIgQEoVs.ED8ssv3F.
+9	shepherdbook@firefly.com	Shepherd Book	$2a$12$CX10v5FCwkzXe/HVFEQjS.q1xBGK0jBvFJGePoCVVmxKNiPTSPip6	$2a$12$CX10v5FCwkzXe/HVFEQjS.
+10	saffron@firefly.com	Saffron	$2a$12$IAT/.1MCoVCVokr/c5Y3c.Qz3tlHXMwbG7fHJeJ2g4DygClS8kl6q	$2a$12$IAT/.1MCoVCVokr/c5Y3c.
+11	badger@firefly.com	Badger	$2a$12$QACYxKlncC8g1s9MJYggneHjzmkKxQhSpBKOW//dFC8lIXOkvnKIe	$2a$12$QACYxKlncC8g1s9MJYggne
+\.
+
+
+--
+-- Name: conversations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
+--
+
+SELECT pg_catalog.setval('public.conversations_id_seq', 5, true);
+
+
+--
+-- Name: messages_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
+--
+
+SELECT pg_catalog.setval('public.messages_id_seq', 8, true);
+
+
+--
+-- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: Guest
+--
+
+SELECT pg_catalog.setval('public.users_id_seq', 11, true);
+
+
+--
+-- Name: ar_internal_metadata ar_internal_metadata_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest
+--
+
+ALTER TABLE ONLY public.ar_internal_metadata
+    ADD CONSTRAINT ar_internal_metadata_pkey PRIMARY KEY (key);
+
+
+--
+-- Name: conversations conversations_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest
+--
+
+ALTER TABLE ONLY public.conversations
+    ADD CONSTRAINT conversations_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: messages messages_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest
+--
+
+ALTER TABLE ONLY public.messages
+    ADD CONSTRAINT messages_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: schema_migrations schema_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest
+--
+
+ALTER TABLE ONLY public.schema_migrations
+    ADD CONSTRAINT schema_migrations_pkey PRIMARY KEY (version);
+
+
+--
+-- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: Guest
+--
+
+ALTER TABLE ONLY public.users
+    ADD CONSTRAINT users_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: index_messages_on_conversation_id; Type: INDEX; Schema: public; Owner: Guest
+--
+
+CREATE INDEX index_messages_on_conversation_id ON public.messages USING btree (conversation_id);
+
+
+--
+-- Name: index_messages_on_user_id; Type: INDEX; Schema: public; Owner: Guest
+--
+
+CREATE INDEX index_messages_on_user_id ON public.messages USING btree (user_id);
+
+
+--
+-- PostgreSQL database dump complete
+--
+
