@@ -3,9 +3,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user
 
-  # before_action :cors_preflight_check
-  # after_action :cors_set_access_control_headers
-
   def current_user
     if session[:user_id]
       return @current_user ||= User.find(session[:user_id])
@@ -27,6 +24,9 @@ class ApplicationController < ActionController::Base
   end
 
   def encode_message(message, key)
+    if key > 26 || key < 1
+      return 'I told you not to do that'
+    end
     alphabet = ('a'..'z').to_a
     alphabet_slice_first = alphabet.slice(key..-1)
     alphabet_slice_last = alphabet.slice(0..(key-1))
@@ -45,6 +45,9 @@ class ApplicationController < ActionController::Base
   end
 
   def decode_message(message, key)
+    if key > 26 || key < 1
+      return 'I told you not to do that'
+    end
     alphabet = ('a'..'z').to_a
     alphabet_slice_first = alphabet.slice(key..-1)
     alphabet_slice_last = alphabet.slice(0..(key-1))
@@ -61,20 +64,5 @@ class ApplicationController < ActionController::Base
     end
     decoded_message = decoded_message_array.join
   end
-
-  # What I was trying to make work for the other app
-  # def cors_preflight_check
-  #   headers['Access-Control-Allow-Origin'] = '*'
-  #   headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
-  #   headers['Access-Control-Request-Method'] = '*'
-  #   headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
-  # end
-  #
-  # def cors_set_access_control_headers
-  #   headers['Access-Control-Allow-Origin'] = '*'
-  #   headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS'
-  #   headers['Access-Control-Request-Method'] = '*'
-  #   headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization'
-  # end
 
 end
