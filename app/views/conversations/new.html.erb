@@ -5,7 +5,7 @@
       <input type="hidden" name="authenticity_token" value="<%= @authenticity_token %>">
       <input type="hidden" name="user1_id" value="<%= params[:user1_id] %>">
       <input type="hidden" name="user2_id" value="<%= params[:user2_id] %>">
-      <p><label for='code_key'>Enter your previously-agreed-upon key (a number between 1 and 26) for this conversation. Unless both of you enter the same key, you will not be able to read eachother's messages. If you enter a number greater than 26... just don't please</label></p>
+      <p><label for='code_key'>Enter your previously-agreed-upon key (a number between 1 and 26) for this conversation. Unless both of you enter the same key, you will not be able to read eachother's messages. If you enter a number greater than 26... just don't</label></p>
       <input type='text' name='code_key' id='code_key' class='form-item'>
       <p><input type='submit' name='commit' value='Go to chat' class='form-item' data-disable-with='set key'></p>
     </form>
