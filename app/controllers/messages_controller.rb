@@ -16,7 +16,6 @@ class MessagesController < ApplicationController
     @coded_messages.each do |message|
       @messages.push(decode_message(message.body, @code_key.to_i))
     end
-    # binding.pry
     if current_user.id == @conversation.user1_id
       @other_user = User.find(@conversation.user2_id)
     else

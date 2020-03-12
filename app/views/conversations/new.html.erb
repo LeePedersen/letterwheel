@@ -1,8 +1,13 @@
-<form action='/conversations' method='post'>
-  <input type="hidden" name="authenticity_token" value="<%= @authenticity_token %>">
-  <input type="hidden" name="user1_id" value="<%= params[:user1_id] %>">
-  <input type="hidden" name="user2_id" value="<%= params[:user2_id] %>">
-  <label for='code_key'></label>
-  <input type='text' name='code_key' id='code_key'>
-  <input type='submit' name='commit' value='set key' data-disable-with='set key'>
-</form>
+<div class='background-page'>
+  <div class='all-forms'>
+    <h2>Set Key</h2>
+    <form action='/conversations' method='post'>
+      <input type="hidden" name="authenticity_token" value="<%= @authenticity_token %>">
+      <input type="hidden" name="user1_id" value="<%= params[:user1_id] %>">
+      <input type="hidden" name="user2_id" value="<%= params[:user2_id] %>">
+      <p><label for='code_key'>Set your key here. The key will be a number between 1 and 26. Make sure the person you're communicating with has the same key, or else they will not be able to read your messages.</label></p>
+      <input type='text' name='code_key' id='code_key' class='form-item'>
+      <p><input type='submit' name='commit' value='Go to chat' class='form-item' data-disable-with='set key'></p>
+    </form>
+  </div>
+</div>

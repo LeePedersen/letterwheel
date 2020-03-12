@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
     alphabet_slice_first = alphabet.slice(key..-1)
     alphabet_slice_last = alphabet.slice(0..(key-1))
     encoded_alphabet = alphabet_slice_first + alphabet_slice_last
-    message_array = message.split('')
+    message_array = message.downcase.split('')
     coded_message_array = []
     message_array.each do |char|
       if alphabet.include?(char)

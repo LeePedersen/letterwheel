@@ -13,7 +13,7 @@
         <% select_class = 'normal' %>
       <% end %>
       <div class='user <%= select_class %>'>
-        <p><span class='dot'><%= user2.username[0] %></span><%= link_to user2.username, conversation_messages_path(conversation) %></p>
+        <p><span class='dot'><%= user2.username[0] %></span><%= link_to user2.username, new_conversation_path(user1_id: current_user.id, user2_id: user2.id) %></p>
       </div>
     <% end %>
   </div>

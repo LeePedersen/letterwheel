@@ -1,15 +1,15 @@
 <%= render "layouts/errors", :object => @session %>
 
-<div class='sign-page'>
+<div class='background-page'>
 
-  <div class='sign-form'>
+  <div class='all-forms'>
     <h1>Sign in to Letterwheel</h1>
     <%= form_tag signin_path do %>
       <p><%= label_tag :email %> address</p>
-      <p><%= text_field_tag :email, "", class: 'input-field' %></p>
+      <p><%= text_field_tag :email, "", class: 'form-item' %></p>
       <p><%= label_tag :password %></p>
-      <p><%= password_field_tag :password, "", class: 'input-field' %></p>
-      <p><%= submit_tag "Sign in", class: 'input-field', id: 'sign-button' %></p>
+      <p><%= password_field_tag :password, "", class: 'form-item' %></p>
+      <p><%= submit_tag "Sign in", class: 'form-item', id: 'sign-button' %></p>
       <hr>
       <p>Or <span id='signup-link'><%= link_to "create an account", '/signup' %></span></p>
     <% end %>

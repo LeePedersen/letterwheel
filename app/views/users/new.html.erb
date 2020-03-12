@@ -1,20 +1,20 @@
 <%= render "layouts/errors", :object => @user %>
 
-<div class='sign-page'>
+<div class='background-page'>
 
-  <div class='sign-form'>
+  <div class='all-forms'>
     <h1> Sign up for Letterwheel</h1>
     <%= form_for @user do |f| %>
       <p><%= f.label "Email" %> address</p>
-      <p><%= f.text_field :email, class: 'input-field' %></p>
+      <p><%= f.text_field :email, class: 'form-item' %></p>
       <p><%= f.label "Username" %></p>
-      <p><%= f.text_field :username, class: 'input-field' %></p>
+      <p><%= f.text_field :username, class: 'form-item' %></p>
       <p><%= f.label "Password" %></p>
-      <p><%= f.password_field :password, class: 'input-field' %></p>
+      <p><%= f.password_field :password, class: 'form-item' %></p>
       <p id='password-info'>Make sure your password is more than 16 characters long</p>
       <p><%= f.label :password_confirmation %></p>
-      <p><%= f.password_field :password_confirmation, class: 'input-field' %></p>
-      <p><%= f.submit "Sign Up", class: 'input-field', id: 'sign-button' %></p>
+      <p><%= f.password_field :password_confirmation, class: 'form-item' %></p>
+      <p><%= f.submit "Sign Up", class: 'form-item', id: 'sign-button' %></p>
       <hr>
       <p>Or <span id='signup-link'><%= link_to "sign in", '/signin' %></span></p>
     <% end %>

@@ -94,7 +94,7 @@ p {
 
 .contact, .user {
   font-size: 20px;
-  padding: 20px;
+  padding: 10px;
 }
 
 .dot {
@@ -177,7 +177,7 @@ p {
   text-align: center;
 }
 
-.sign-page {
+.background-page {
   position: absolute;
   z-index: 1;
   top: 0; right: 0; bottom: 0; left: 0;
@@ -188,7 +188,7 @@ p {
   background-position: center;
 }
 
-.sign-form {
+.all-forms {
   margin: auto;
   width: 30%;
   border: solid 1px #134734;
@@ -204,7 +204,7 @@ p {
   font-weight: bold;
 }
 
-.input-field {
+.form-item {
   width: 100%;
   border-radius: 5px;
   height: 30px;
