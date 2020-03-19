@@ -1,5 +1,7 @@
 # Letter Wheel
 
+deployed [here](https://powerful-stream-59899.herokuapp.com/)
+
 _Encoded (not encrypted!) messaging app with ruby on rails. Works on the same principle as a simple letter wheel or [code wheel](https://en.wikipedia.org/wiki/Code_wheel)_
 
 ## Setup/Installation instructions:
